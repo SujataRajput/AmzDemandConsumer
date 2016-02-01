@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xb="XBHW" targetNamespace="XBHW" elementFormDefault="qualified">
+    <xs:element name="Demand">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="LineItem" type="xb:DemandId.LineItem" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="demandId" type="xb:DemandId" use="required"/>
+        </xs:complexType>        
+    </xs:element>
+    <xs:complexType name="DemandId.LineItem">
+        <xs:attribute name="productId" type="xb:ProductId" use="required"/>
+        <xs:attribute name="quantity" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="lotId" type="xb:LotId" use="optional"/>
+    </xs:complexType>
+    <xs:simpleType name="DemandId">
+        <xs:restriction base="xb:Id">
+            <xs:maxLength value="80"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ProductId">
+        <xs:restriction base="xb:Id">
+            <xs:maxLength value="40"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LotId">
+        <xs:restriction base="xb:Id">
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Id">
+        <xs:restriction base="xs:token">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

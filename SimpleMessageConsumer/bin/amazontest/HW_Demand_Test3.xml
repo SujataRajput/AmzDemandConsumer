@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xb:Demand demandId="1" xmlns:xb="XBHW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="XBHW HW_Demand(1).xsd ">
+  <xb:LineItem productId="4" quantity="1" lotId="123"/>
+</xb:Demand>
