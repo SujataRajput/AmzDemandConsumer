@@ -185,16 +185,6 @@ public class AmazonDynamoDBDAO {
 				Map<String, AttributeValue> item = newItem(Integer.toString(i));
 				PutItemRequest putItemRequest = new PutItemRequest(productTable, item);
 				PutItemResult putItemResult = dynamoDB.putItem(putItemRequest);
-
-				// Add another product
-				/*item = newItem("2");
-					putItemRequest = new PutItemRequest(productTable, item);
-					putItemResult = dynamoDB.putItem(putItemRequest); 
-
-					// Add another product
-					item = newItem("3");
-					putItemRequest = new PutItemRequest(productTable, item);
-					putItemResult = dynamoDB.putItem(putItemRequest); */
 			}
 		} catch (AmazonServiceException ase) {
 			System.out.println("Caught an AmazonServiceException, which means your request made it "
